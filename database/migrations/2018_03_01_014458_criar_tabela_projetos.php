@@ -14,11 +14,10 @@ class CriarTabelaProjetos extends Migration
     public function up()
     {
         Schema::create('projeto', function (Blueprint $table) {
-            $table->increments('id_projeto')->nullable();
-            $table->primary('id_projeto');
-            $table->string('nome','255')->nullable();
-            $table->longText('descricao')->nullable();
-            $table->integer('id_user')->nullable();
+            $table->increments('id_projeto');
+            $table->string('nome','255');
+            $table->longText('descricao');
+            $table->integer('id_user');
             $table->foreign('id_user')->references('id_user')->on('users');
             $table->timestamps();
         });
